@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rueda de la Vida</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .btn-grupo-respuestas .btn {
+            margin-right: 5px;
+        }
+        #graficaContainer {
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 p-4">
+                <h2 class="mb-4">Rueda de la Vida</h2>
+                <div id="preguntasContainer"></div>
+            </div>
+            <div class="col-md-6 p-4">
+                <div id="graficaContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const preguntas = {{ preguntas | tojson | safe }};
+            const preguntasContainer = document.getElementById('preguntasContainer');
+            const graficaContainer = document.getElementById('graficaContainer');
+
+            function createQuestionElement(pregunta, index) {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('mb-3');
+                questionDiv.innerHTML = `
+                    <label class="form-label">${pregunta}</label>
+                    <div class="btn-grupo-respuestas btn-group" role="group">
+                        ${[1,2,3,4,5,6,7,8,9,10].map(num => 
+                            `<button type="button" class="btn btn-outline-primary" 
+                                data-pregunta="${index}" 
+                                data-valor="${num}">${num}</button>`
+                        ).join('')}
+                    </div>
+                `;
+                return questionDiv;
+            }
+
+            function renderQuestions() {
+                preguntas.forEach((pregunta, index) => {
+                    const questionElement = createQuestionElement(pregunta, index);
+                    preguntasContainer.appendChild(questionElement);
+                });
+
+                // Event listener for buttons
+                preguntasContainer.addEventListener('click', function(event) {
+                    if (event.target.classList.contains('btn')) {
+                        const index = event.target.getAttribute('data-pregunta');
+                        const valor = event.target.getAttribute('data-valor');
+                        const categoria = preguntas[index].split(':')[0].trim();
+
+                        console.log(`Enviando respuesta - Categoria: ${categoria}, Valor: ${valor}`);
+
+                        // Enviar respuesta al servidor
+                       // Reemplaza la parte fetch en tu index.html
+fetch('/guardar_respuesta', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        categoria: categoria,
+        valor: parseInt(valor)
+    })
+})
+.then(response => {
+    console.log('Respuesta del servidor recibida:', response.status);
+    if (!response.ok) {
+        throw new Error(`Error HTTP: ${response.status}`);
+    }
+    return response.json();
+})
+.then(data => {
+    console.log('Datos recibidos:', data);
+    if (data.success) {
+        if (data.grafica) {
+            graficaContainer.innerHTML = data.grafica;
+            console.log('Gráfica renderizada');
+        } else {
+            console.warn('No se recibió gráfica en respuesta exitosa');
+            graficaContainer.innerHTML = '<div class="alert alert-warning">No hay datos suficientes para mostrar gráfica</div>';
+        }
+    } else {
+        console.warn('Respuesta no exitosa:', data.error);
+        graficaContainer.innerHTML = `<div class="alert alert-danger">Error: ${data.error || 'Desconocido'}</div>`;
+    }
+})
+.catch(error => {
+    console.error('Error completo:', error);
+    // Mostrar mensaje más descriptivo
+    graficaContainer.innerHTML = `
+        <div class="alert alert-danger">
+            <strong>Error de conexión:</strong> ${error.message}
+            <p>Posible causa: El servidor no está respondiendo o la base de datos no está disponible.</p>
+            <p>Intenta recargar la página o verificar la conexión al servidor.</p>
+        </div>`;
+});
+            }
+        });
+        });
+    </script>
+</body>
+</html>
