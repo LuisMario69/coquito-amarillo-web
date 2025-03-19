@@ -1,0 +1,29 @@
+/* Reglas responsive para el footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-logo, .footer-links, .footer-contact {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-links h4::after,
+    .footer-contact h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-links ul li {
+        margin-bottom: 0;
+    }
+}

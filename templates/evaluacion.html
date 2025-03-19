@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coquito Amarillo - Evaluación RRHH</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Logo Coquito Amarillo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="evaluacion.html" class="active">Evaluación RRHH</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero evaluation-hero">
+            <h1>Evaluación de la Rueda de la Vida</h1>
+            <p>Herramienta para el desarrollo personal y profesional</p>
+        </section>
+
+        <section class="evaluation-intro">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>¿Qué es la Rueda de la Vida?</h2>
+                    <p>La Rueda de la Vida es una herramienta de evaluación que permite visualizar el equilibrio entre diferentes áreas de nuestra vida. Al completar esta evaluación, podrás identificar qué aspectos están recibiendo suficiente atención y cuáles necesitan más desarrollo.</p>
+                    <p>Esta evaluación te ayudará a establecer metas específicas para mejorar tu bienestar general y rendimiento profesional.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="../assets/images/wheel-of-life.png" alt="Rueda de la Vida">
+                </div>
+            </div>
+        </section>
+
+        <section class="evaluation-form-container">
+            <h2>Completa tu evaluación</h2>
+            <form class="evaluation-form" action="#" method="post">
+                <div class="employee-info">
+                    <h3>Información del empleado</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empleado_id">ID de empleado</label>
+                            <input type="text" id="empleado_id" name="empleado_id" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departamento">Departamento</label>
+                            <select id="departamento" name="departamento" required>
+                                <option value="">Seleccionar departamento</option>
+                                <option value="rrhh">Recursos Humanos</option>
+                                <option value="finanzas">Finanzas</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="operaciones">Operaciones</option>
+                                <option value="ti">Tecnología</option>
+                                <option value="ventas">Ventas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha de evaluación</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="evaluation-categories">
+                    <h3>Áreas de evaluación</h3>
+                    <p>En una escala del 1 al 10, donde 1 es muy insatisfecho y 10 es completamente satisfecho, evalúa las siguientes áreas de tu vida:</p>
+                    
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="salud">Salud y bienestar físico</label>
+                            <input type="range" id="salud" name="salud" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Incluye ejercicio, alimentación, descanso y cuidado personal.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="carrera">Carrera profesional</label>
+                            <input type="range" id="carrera" name="carrera" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Satisfacción con tu trabajo actual, crecimiento y desarrollo profesional.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="finanzas">Finanzas</label>
+                            <input type="range" id="finanzas" name="finanzas" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Situación económica, ahorro, inversiones y planificación financiera.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="relaciones">Relaciones personales</label>
+                            <input type="range" id="relaciones" name="relaciones" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Calidad de relaciones familiares, amistades y vida social.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="crecimiento">Crecimiento personal</label>
+                            <input type="range" id="crecimiento" name="crecimiento" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Desarrollo de habilidades, aprendizaje continuo y crecimiento mental.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="ocio">Ocio y recreación</label>
+                            <input type="range" id="ocio" name="ocio" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Tiempo para hobbies, diversión y actividades que disfrutas.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="entorno">Entorno físico</label>
+                            <input type="range" id="entorno" name="entorno" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Satisfacción con tu hogar, lugar de trabajo y entorno general.</p>
+                        </div>
+                    </div>
+
+                    <div class="category-group">
+                        <div class="category">
+                            <label for="proposito">Propósito y contribución</label>
+                            <input type="range" id="proposito" name="proposito" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                            <output>5</output>
+                        </div>
+                        <div class="category-description">
+                            <p>Sentido de propósito, contribución a la sociedad y satisfacción general.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-section">
+                    <h3>Comentarios adicionales</h3>
+                    <div class="form-group">
+                        <label for="objetivos">¿Qué objetivos te gustaría establecer para mejorar las áreas con menor puntuación?</label>
+                        <textarea id="objetivos" name="objetivos" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="apoyo">¿Qué tipo de apoyo necesitarías de la empresa para alcanzar estos objetivos?</label>
+                        <textarea id="apoyo" name="apoyo" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Enviar evaluación</button>
+                    <button type="reset" class="reset-btn">Reiniciar formulario</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../assets/images/logo.png" alt="Logo Coquito Amarillo">
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="evaluacion.html">Evaluación RRHH</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>Email: info@coquitoamarillo.com</p>
+                <p>Teléfono: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Coquito Amarillo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
