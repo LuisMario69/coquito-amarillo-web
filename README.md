@@ -1,4 +1,4 @@
-# Coquito Amarillo WEb 📊  
+# Coquito Amarillo Web 📊  
 
 ### 📌 Descripción  
 
