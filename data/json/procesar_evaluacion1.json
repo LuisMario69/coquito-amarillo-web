@@ -1,0 +1,25 @@
+{
+    "respuestas": {
+      "informacion_empleado": {
+        "nombre": "Ana Rodríguez",
+        "empleado_id": "EMP67890",
+        "departamento": "Marketing",
+        "fecha": "2025-03-20"
+      },
+      "areas_evaluacion": {
+        "salud": 6,
+        "carrera": 8,
+        "finanzas": 5,
+        "relaciones": 7,
+        "crecimiento": 8,
+        "ocio": 6,
+        "entorno": 7,
+        "proposito": 8
+      },
+      "comentarios_adicionales": {
+        "objetivos": "Quisiera mejorar mi bienestar físico y mi organización financiera para sentirme más estable.",
+        "apoyo": "Sería útil contar con asesorías sobre planificación financiera y un programa de bienestar en la empresa."
+      }
+    }
+  }
+  

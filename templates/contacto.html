@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coquito Amarillo - Nosotros</title>
+    <title>Coquito Amarillo - Contacto</title>
     <link rel="stylesheet" href="../css/style.css">
-    
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
     <header>
@@ -15,50 +15,67 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html" class="active">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
                 <li><a href="evaluacion.html">Evaluación RRHH</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero about-hero">
-            <h1>Sobre Coquito Amarillo</h1>
-            <p>Conoce nuestra historia, misión y visión</p>
+        <section class="hero contact-hero">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte</p>
         </section>
 
-        <section class="about-content">
-            <div class="mission-vision">
-                <div class="mission">
-                    <h2>Misión</h2>
-                    <p>En Coquito Amarillo, nuestra misión es transformar la gestión del talento humano a través de soluciones innovadoras y personalizadas que potencien el desarrollo integral de las personas y el crecimiento sostenible de las organizaciones.</p>
-                    <p>Nos comprometemos a ofrecer herramientas de evaluación de alta calidad que permitan identificar fortalezas y áreas de mejora, facilitando la toma de decisiones estratégicas en recursos humanos.</p>
+        <section class="contact-content">
+            <div class="contact-info">
+                <h2>Información de contacto</h2>
+                <div class="info-item">
+                    <h3>Dirección</h3>
+                    <p>Av. Principal 123, Ciudad</p>
                 </div>
-                <div class="vision">
-                    <h2>Visión</h2>
-                    <p>Aspiramos a ser reconocidos como líderes en el desarrollo de soluciones digitales para la gestión del talento humano en América Latina, estableciendo nuevos estándares de excelencia en evaluación y desarrollo organizacional.</p>
-                    <p>Visualizamos un futuro donde cada colaborador pueda alcanzar su máximo potencial gracias a procesos de evaluación transparentes, objetivos y centrados en el crecimiento personal y profesional.</p>
+                <div class="info-item">
+                    <h3>Teléfono</h3>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>info@coquitoamarillo.com</p>
+                </div>
+                <div class="info-item">
+                    <h3>Horario de atención</h3>
+                    <p>Lunes a Viernes: 9:00 - 18:00</p>
                 </div>
             </div>
 
-            <div class="team-section">
-                <h2>Nuestro equipo</h2>
-                <div class="team-image">
-                    <img src="../assets/images/team.jpg" alt="Equipo de Coquito Amarillo">
-                </div>
-                <p>Contamos con un equipo multidisciplinario de profesionales en recursos humanos, psicología organizacional, desarrollo de software y análisis de datos, comprometidos con la excelencia y la innovación continua.</p>
-            </div>
-
-            <div class="values">
-                <h2>Valores</h2>
-                <ul>
-                    <li><strong>Integridad:</strong> Actuamos con honestidad y transparencia en todas nuestras interacciones.</li>
-                    <li><strong>Innovación:</strong> Buscamos constantemente nuevas formas de mejorar nuestras soluciones y servicios.</li>
-                    <li><strong>Colaboración:</strong> Trabajamos en equipo para lograr resultados extraordinarios.</li>
-                    <li><strong>Excelencia:</strong> Nos esforzamos por superar las expectativas en todo lo que hacemos.</li>
-                    <li><strong>Empatía:</strong> Comprendemos las necesidades y desafíos de nuestros clientes y colaboradores.</li>
-                </ul>
+            <div class="contact-form-container">
+                <h2>Envíanos un mensaje</h2>
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (opcional)</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Enviar mensaje</button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

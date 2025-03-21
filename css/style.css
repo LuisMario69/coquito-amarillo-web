@@ -241,3 +241,108 @@ footer {
     font-size: 0.9rem;
     color: #aaa;
 }
+
+/* Estilos para mensajes flash */
+.flash-messages {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.flash-message {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.flash-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Estilos para la página de confirmación */
+.confirmation {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.confirmation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation h1 {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.success-icon {
+    font-size: 80px;
+    color: var(--success-color);
+    margin: 20px 0;
+}
+
+.confirmation p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.actions {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}

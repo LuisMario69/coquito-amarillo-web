@@ -1,0 +1,25 @@
+{
+    "respuestas": {
+      "informacion_empleado": {
+        "nombre": "Julian Pérez",
+        "empleado_id": "EMP12345",
+        "departamento": "Tecnología",
+        "fecha": "2025-03-20"
+      },
+      "areas_evaluacion": {
+        "salud": 8,
+        "carrera": 9,
+        "finanzas": 7,
+        "relaciones": 6,
+        "crecimiento": 9,
+        "ocio": 7,
+        "entorno": 8,
+        "proposito": 9
+      },
+      "comentarios_adicionales": {
+        "objetivos": "Mejorar mi red de contactos y fortalecer relaciones personales. También quiero optimizar mi planificación financiera.",
+        "apoyo": "Me gustaría recibir capacitaciones sobre manejo financiero y networking profesional."
+      }
+    }
+  }
+  
